@@ -1,0 +1,281 @@
+// Estructura de Nodos v1.
+
+#include <iostream>
+#include <stdlib.h>
+#include <iomanip>
+#include <conio.h>
+
+#define LONGITUD 16
+const char SALIR = '4';  /* mirar menu */
+using namespace std;
+
+class nodo {
+   public:
+    nodo(int val, nodo *sig = NULL, nodo *ante = NULL)
+    {
+     valor = val;
+     siguiente = sig;
+     anterior=ante;
+    }
+   private:
+    int valor;
+    nodo *siguiente;
+    nodo *anterior;
+
+   friend class lista;
+};
+
+class lista {
+   public:
+   	void insertarnodo(nodo *&,int,nodo *);
+   	void mostrararbol(nodo *);
+   	void mostrararbolWhile(nodo *);
+   	void imprimirDatos(nodo *);
+    void destruirnodo(nodo *);
+    void procesarEliminacion(nodo *);
+    void reemplazar(nodo *);
+    nodo *buscar(nodo *,int);
+};
+
+void encabezado();
+void menu();
+char setOpcion();
+void ejecutar( char );
+void procesoExitoso();
+void vacio();
+
+void listarNodos( char );
+void encabezadoLista();
+void agregar();
+void eliminacion();
+void salir();
+
+nodo *arbol = NULL;
+lista Lista;
+
+int main() {
+  char opcion;
+  system("title Estructura de Nodo");
+
+  do
+  {
+    menu();
+    opcion = setOpcion();
+    ejecutar(opcion);
+  } while(opcion != SALIR);
+
+  return 0;
+}
+
+void encabezado()
+{
+  system("cls");
+  cout<< endl << "\t\t\t" << "Estructura de arboles"	<< endl << endl;
+}
+
+void menu(){
+  encabezado();
+  cout<<"1. Insertar un nodo"<<endl
+      <<"2. Listar nodos usando while"<<endl
+      <<"3. Listar nodos usando recursividad"<<endl
+      <<"4. Salir"<<endl<<endl;
+}
+
+char setOpcion()
+{
+  char opcion;
+  cout << "Ingrese una opcion: ";
+  cin>>opcion;
+  return opcion;
+}
+
+void ejecutar(char op)
+{
+  encabezado();
+  switch(op){
+    case '1':
+      agregar(); break;
+    case '2':
+    case '3':
+        listarNodos(op); break;
+    case '4':
+        salir(); break;
+    default:
+      cout << endl << "Opcion invalida..."; getch();
+  }
+}
+
+void agregar()
+{
+  int val;
+
+  cout<<"Ingrese el valor del nodo: ";
+  cin>>val;
+
+  Lista.insertarnodo(arbol, val, NULL);
+  procesoExitoso();
+}
+
+void lista::insertarnodo(nodo *&arbol, int n, nodo *anterior){
+   if(arbol==NULL)
+   {
+          nodo *nuevo_nodo= new nodo(n,NULL,anterior);
+          arbol=nuevo_nodo;
+   }else //si el arbol tiene uno o mas nodos
+   {
+      insertarnodo(arbol->siguiente,n,arbol);
+   }
+}
+
+void listarNodos(char op)
+{
+  if(arbol == NULL){
+    vacio();
+		return;
+	}
+
+  encabezadoLista();
+
+  if(op == '3')
+    Lista.mostrararbol(arbol);
+  else
+     Lista.mostrararbolWhile(arbol);
+}
+
+void lista::mostrararbol(nodo *arbol){
+   if(arbol== NULL)
+   {
+    cout << endl << "Presione cualquier tecla para continuar..."; getch();
+    return;
+   }
+   else
+   {
+     imprimirDatos(arbol);
+     mostrararbol(arbol->siguiente);
+   }
+}
+
+void lista::mostrararbolWhile(nodo *arbol)
+{
+	while(arbol != NULL)
+  {
+   imprimirDatos(arbol);
+   arbol = arbol->siguiente;
+  }
+  cout << endl << "Presione cualquier tecla para continuar..."; getch();
+}
+
+void encabezadoLista()
+{
+  cout << setw(LONGITUD) << left << "Codigo"
+       << setw(LONGITUD) << left << "Valor"
+       << setw(LONGITUD) << left << "Nodo siguiente"
+       << endl;
+}
+
+void lista::imprimirDatos(nodo *arbol)
+{
+  cout << setw(LONGITUD) << left <<arbol
+       << setw(LONGITUD) << left <<arbol->valor
+       << setw(LONGITUD) << left <<arbol->siguiente << endl;
+}
+
+nodo *lista::buscar(nodo *arbol,int n){
+  if(arbol == NULL)
+  {
+    return NULL;
+  }
+
+  if(arbol->valor == n)
+	{
+		return arbol;
+	}else{
+		buscar(arbol->siguiente,n);
+	}
+}
+
+void eliminacion()
+{
+  if(arbol == NULL){
+    vacio();
+		return;
+	}
+
+  int val;
+  cout<<"Ingrese el valor a eliminar: ";
+  cin >> val;
+  nodo *relevo = Lista.buscar(arbol, val);
+  Lista.procesarEliminacion(relevo);
+}
+
+void lista::procesarEliminacion(nodo *nodoeliminar)
+{
+  if(nodoeliminar == NULL)
+  {
+    cout << endl << "Nodo no encontrado..."; getch();
+    return;
+  }
+
+  if(nodoeliminar->anterior == NULL && nodoeliminar->siguiente == NULL)
+  {
+    /* si es el único nodo, el árbol se vacía */
+    arbol = NULL;
+  }
+
+  else if(nodoeliminar->anterior == NULL)
+  {
+    /* si es la raiz y tiene hijos, el que sigue toma la posicion y a éste
+       se le quita el miembro anterior por ser raíz */
+    arbol = nodoeliminar->siguiente;
+    nodoeliminar->siguiente->anterior = NULL;
+  }
+
+	else if(nodoeliminar->siguiente == NULL)
+  {
+    /* si es una hoja, a su miembro anterior se le borra
+       esta dirección y luego se elimina */
+		nodoeliminar->anterior->siguiente = NULL;
+		destruirnodo(nodoeliminar);
+	}
+
+	else
+	{
+	  /* si es padre, se hace la sustitución de memoria
+       y después se elimina */
+		reemplazar(nodoeliminar);
+		destruirnodo(nodoeliminar);
+	}
+
+	procesoExitoso();
+}
+
+void lista::destruirnodo(nodo *nodo){
+	nodo->siguiente = NULL;
+	nodo->anterior = NULL;
+	delete nodo;
+}
+
+void lista::reemplazar(nodo *arbol){
+  /* la dirección del nodo siguiente al que apunta este nodo va a
+     estar almacenada en el miembro siguiente de su nodo anterior */
+	arbol->anterior->siguiente = arbol->siguiente;
+
+  /* la dirección del nodo anterior al que apunta este nodo va a
+     estar almacenada en el miembro anterior de su nodo siguiente  */
+	arbol->siguiente->anterior = arbol->anterior;
+}
+
+void procesoExitoso()
+{
+  cout << endl << "Proceso exitoso..."; getch();
+}
+
+void vacio()
+{
+  cout << endl << "No hay datos..."; getch();
+}
+
+void salir()
+{
+  cout << endl << "Gracias por tu visita..." << endl << endl; getch();
+}
