@@ -1,7 +1,7 @@
 # ArbolBinario
 Estructura de árbol binario escrito en el lenguaje C++.
 
-<strong>Integrantes:</strong>
+<strong>Integrantes:</strong> <br/>
 Brenda Blanco <br/>
 Daniel Estupe </br>
 Eloina Carrillo <br/>
