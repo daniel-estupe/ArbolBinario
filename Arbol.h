@@ -13,8 +13,10 @@ public:
   void agregarNodo();
   void mostrarPorWhile();
   void mostrarPorRecursion();
+  
 private:
   void insertarValor( int );
+  void muestreoRecursivo(Nodo *);
   void encabezadoArbol();
   void mostrarDatos(Nodo *);
 
