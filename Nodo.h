@@ -12,6 +12,37 @@ class Nodo {
      this->siguiente = NULL;
     }
 
+    void setAnterior(Nodo *anterior)
+    {
+      this->anterior = anterior;
+    }
+
+    void setSiguiente(Nodo *siguiente)
+    {
+      this->siguiente = siguiente;
+    }
+
+    void setValor(int valor)
+    {
+      this->valor = valor;
+    }
+
+    Nodo *getAnterior()
+    {
+      return anterior;
+    }
+
+    Nodo *getSiguiente()
+    {
+      return siguiente;
+    }
+
+    int getValor()
+    {
+      return valor;
+    }
+
+  private:
     Nodo *anterior;
     Nodo *siguiente;
     int valor;
