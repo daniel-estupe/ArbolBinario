@@ -10,8 +10,8 @@ int main() {
   do
   {
     mostrarMenu();
-    opcion = setOpcion();
-    ejecutar(opcion, arbol);
+    opcion = obtenerItem();
+    ejecutar(opcion, &arbol);
   } while(opcion != SALIR);
 
   return 0;
