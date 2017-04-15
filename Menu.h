@@ -27,7 +27,7 @@ void mostrarMenu(){
       <<"4. Salir"<<endl<<endl;
 }
 
-char setOpcion()
+char obtenerItem()
 {
   char opcion;
   cout << "Ingrese una opcion: ";
@@ -40,17 +40,17 @@ void salir()
   cout << endl << "Gracias por tu visita..." << endl << endl; getch();
 }
 
-void ejecutar(char op, Arbol arbol)
+void ejecutar(char op, Arbol *arbol)
 {
   encabezado();
 
   switch(op){
     case '1':
-      arbol.agregarNodo(); break;
+      arbol->agregarNodo(); break;
     case '2':
-      arbol.mostrarPorWhile(); break;
+      arbol->mostrarPorWhile(); break;
     case '3':
-      arbol.mostrarPorRecursion(); break;
+      arbol->mostrarPorRecursion(); break;
     case '4':
         salir(); break;
     default:
