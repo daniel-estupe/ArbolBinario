@@ -2,12 +2,12 @@
 #define LONGITUD 16
 using namespace std;
 
-/* Métodos Publicos */
+/* MÃ©todos Publicos */
 
 Arbol::Arbol()
 {
-  raiz = NULL;
-  actual = NULL;
+  this->raiz = NULL;
+  this->actual = NULL;
 }
 
 void Arbol::agregarNodo()
@@ -16,8 +16,6 @@ void Arbol::agregarNodo()
   cout << "Ingrese el valor del nodo: ";
   cin >> valor;
   insertarValor(valor);
-  cout << endl << raiz << endl << actual << endl;
-
   cout << endl << "Proceso exitoso..."; getch();
 }
 
@@ -25,37 +23,68 @@ void Arbol::mostrarPorWhile()
 {
   Nodo *nodo = raiz;
 
+  if(raiz == NULL)
+  {
+    cout << endl << "El arbol no tiene nodos...";
+  }
+
+  else
+  {
   encabezadoArbol();
+
   while(nodo != NULL)
   {
    mostrarDatos(nodo);
-   nodo = nodo->siguiente;
+   nodo = nodo->getSiguiente();
   }
-  cout << endl << "Presione cualquier tecla para continuar..."; getch();
+
+  cout << endl << "Presione cualquier tecla para continuar...";
+  }
+  getch();
 }
 
 void Arbol::mostrarPorRecursion()
 {
-
-}
-
-/* Métodos Privados */
-
-void Arbol::insertarValor(int valor)
-{
-  Nodo *nuevo_nodo = NULL;
-
   if(raiz == NULL)
   {
-    nuevo_nodo = new Nodo(valor, NULL);
-    raiz = nuevo_nodo;
+    cout << endl << "El arbol no tiene nodos...";
   }
   else
   {
-    nuevo_nodo = new Nodo(valor, actual);
-    actual->siguiente = nuevo_nodo;
+  encabezadoArbol();
+  muestreoRecursivo(raiz);
+  cout << endl << "Presione cualquier tecla para continuar...";
   }
-  actual = nuevo_nodo;
+  getch();
+}
+
+/* MÃ©todos Privados */
+
+void Arbol::insertarValor(int valor)
+{
+  Nodo *nuevo = new Nodo(valor, actual);
+
+  if(raiz)
+  {
+    actual->setSiguiente(nuevo);
+    actual = nuevo;
+  }
+  else
+  {
+    raiz = nuevo;
+    actual = raiz;
+  }
+}
+
+void Arbol::muestreoRecursivo(Nodo *nodo)
+{
+  if(nodo)
+  {
+    mostrarDatos(nodo);
+    muestreoRecursivo(nodo->getSiguiente());
+  }
+  else
+    return;
 }
 
 void Arbol::encabezadoArbol()
@@ -69,8 +98,7 @@ void Arbol::encabezadoArbol()
 void Arbol::mostrarDatos(Nodo *nodo)
 {
   cout << setw(LONGITUD) << left << nodo
-       << setw(LONGITUD) << left << nodo->valor
-       << setw(LONGITUD) << left << nodo->siguiente << endl;
+       << setw(LONGITUD) << left << nodo->getValor()
+       << setw(LONGITUD) << left << nodo->getSiguiente() << endl;
 }
-
 
