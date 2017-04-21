@@ -3,7 +3,7 @@
 #define LONGITUD_HIJO 18
 using namespace std;
 
-/* MÈtodos Publicos */
+/* M√©todos Publicos */
 
 Arbol::Arbol()
 {
@@ -14,10 +14,10 @@ void Arbol::agregarNodo()
 {
   int valor_padre = 0; /* valor para buscar el nodo padre al cual ingresarle el hijo*/
   int valor = 0; /* valor del nuevo nodo */
-  Nodo *codigo_padre = NULL; /* cÛdigo del padre al cual se le ingresar· una hijo */
-  Nodo *codigo_nodo = NULL; /* cÛdigo que indica la existencia de un nodo del mismo valor que el ingresado */
+  Nodo *codigo_padre = NULL; /* c√≥digo del padre al cual se le ingresar√° una hijo */
+  Nodo *codigo_nodo = NULL; /* c√≥digo que indica la existencia de un nodo del mismo valor que el ingresado */
   bool direccion; /* 0 es izquierda y 1 es derecha */
-  bool ocupado; /* indica si la direccion ya est· ocupada */
+  bool ocupado; /* indica si la direccion ya est√° ocupada */
 
   if(raiz != NULL)
   {
@@ -70,7 +70,7 @@ void Arbol::mostrarPorWhile()
 
 void Arbol::mostrarPorRecursion()
 {
-  //agregar cÛdigo  eloina
+  //agregar c√≥digo  eloina
 }
 
 void Arbol::buscarNodo()
@@ -78,7 +78,7 @@ void Arbol::buscarNodo()
   //agregar codigo anahi
 }
 
-/* MÈtodos Privados */
+/* M√©todos Privados */
 void Arbol::insertarRaiz(int valor)
 {
   Nodo *nuevo = new Nodo(valor, NULL);
@@ -99,9 +99,21 @@ void Arbol::insertarHijo(int valor, Nodo *nodo, bool direccion)
   cout << endl << "Proceso exitoso...";
 }
 
-Nodo *Arbol::getNodo(int valor, Nodo *nodo)
+Nodo *Arbol::getNodo(int valor, Nodo *nodo)// escribir codigo  brenda
 {
-  // escribir codigo  brenda
+   if(nodo == NULL)
+    return nodo;
+
+  else if(nodo->getValor() == valor)
+    return nodo;
+
+  else if(getNodo(valor, nodo->getIzquierda()) != NULL)
+    return getNodo(valor, nodo->getIzquierda());
+
+  else if(getNodo(valor, nodo->getDerecha()) != NULL)
+    return getNodo(valor, nodo->getDerecha());
+
+  else return NULL;
 }
 
 void Arbol::muestreoRecursivo(Nodo *nodo)
@@ -109,9 +121,13 @@ void Arbol::muestreoRecursivo(Nodo *nodo)
   // eloina
 }
 
-void Arbol::encabezadoArbol()
+void Arbol::encabezadoArbol()// escribir codigo brenda
 {
-  // escribir codigo brenda
+  cout << setw(LONGITUD_NODO) << left << "Codigo"
+       << setw(LONGITUD_NODO) << left << "Valor"
+       << setw(LONGITUD_HIJO) << left << "Nodo Izquierdo"
+       << setw(LONGITUD_HIJO) << left << "Nodo Derecho"
+       << endl;// escribir codigo brenda
 }
 
 void Arbol::encabezadoArbolIndividual()
@@ -125,9 +141,24 @@ void Arbol::encabezadoArbolIndividual()
        << endl;
 }
 
-void Arbol::mostrarDatos(Nodo *nodo)
+void Arbol::mostrarDatos(Nodo *nodo)// escribir codigo brenda
 {
-  // escribir codigo brenda
+  Nodo *izquierda = nodo->getIzquierda();
+  Nodo *derecha = nodo->getDerecha();
+  int valor_izquierda = 0;
+  int valor_derecha = 0;
+
+  valor_izquierda = (izquierda) ? izquierda->getValor() : 0;
+  valor_derecha = (derecha) ? derecha->getValor() : 0;
+
+  cout << setw(LONGITUD_NODO) << left << nodo
+       << setw(LONGITUD_NODO) << left << nodo->getValor()
+       << setw(LONGITUD_HIJO) << left << izquierda
+       << setw(LONGITUD_HIJO) << left << valor_izquierda
+       << setw(LONGITUD_HIJO) << left << derecha
+       << setw(LONGITUD_HIJO) << left << valor_derecha << endl;
+
+  cout << endl;
 }
 
 void Arbol::mostrarDatosIndividual(Nodo *nodo)
