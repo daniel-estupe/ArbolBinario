@@ -1,7 +1,10 @@
 #include <iostream>
+#include <string.h>
 
 #ifndef NODO_H
 #define NODO_H
+
+using std::string;
 
 class Nodo {
    public:
@@ -56,13 +59,33 @@ class Nodo {
       return valor;
     }
 
-    bool isPadre()
+    bool esPadre()
     {
-      if(derecha != NULL || izquierda != NULL)
+      if(this->derecha != NULL || this->izquierda != NULL)
         return true;
       else
         return false;
     }
+
+    bool getDireccion()
+    {
+      /* true es derecha y false es izquierda */
+      if(this->padre->derecha == this)
+        return true;
+      else
+        return false;
+    }
+
+     string obtenerIdentidad()
+     {
+        if(this->getPadre() == NULL)
+          return "Raiz";
+        else if(this->esPadre() == true)
+          return "Padre";
+        else
+          return "Hoja";
+     }
+
   private:
     Nodo *padre;
     Nodo *derecha;

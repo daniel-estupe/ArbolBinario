@@ -1,6 +1,10 @@
 #include "Arbol.h"
 #define LONGITUD_NODO 12
 #define LONGITUD_HIJO 18
+
+const bool DERECHA = true;
+const bool IZQUIERDA = false;
+
 using namespace std;
 
 /* Métodos Publicos */
@@ -131,7 +135,7 @@ void Arbol::eliminarNodo()
       encabezadoArbolIndividual();
       mostrarDatosIndividual(codigo_nodo);
 
-      cout << endl << "Dese eliminar Si(1) No(0): ";
+      cout << endl << "ADVERTENCIA:\n\tSe eliminaran los hijos que contenga el nodo. Desea eliminar? Si(1) No(0): ";
       cin >> opcion_eliminar;
 
       if(opcion_eliminar == true)
@@ -167,7 +171,7 @@ void Arbol::insertarHijo(int valor, Nodo *nodo, bool direccion)
   Nodo *nuevo = new Nodo(valor, nodo);
 
   // true es derecha y false es izquierda
-  if(direccion)
+  if(direccion == DERECHA)
     nodo->setDerecha(nuevo);
   else
     nodo->setIzquierda(nuevo);
@@ -220,7 +224,7 @@ void Arbol::elimina(Nodo *nodo)
 
   if(codigo_padre != NULL)
   {
-    direccion = getDireccion(nodo);
+    direccion = nodo->getDireccion();
 
     if(direccion == true)
       codigo_padre->setDerecha(NULL);
@@ -229,23 +233,6 @@ void Arbol::elimina(Nodo *nodo)
   }
 
   delete nodo;
-
-}
-
-bool Arbol::tieneHijos(Nodo *nodo)
-{
-  if(nodo->getDerecha() || nodo->getIzquierda())
-    return true;
-  else
-    return false;
-}
-
-bool Arbol::getDireccion(Nodo *nodo)
-{
-  if(nodo->getPadre()->getDerecha() == nodo)
-    return true;
-  else
-    return false;
 }
 
 void Arbol::encabezadoArbol()
@@ -260,6 +247,7 @@ void Arbol::encabezadoArbol()
 void Arbol::encabezadoArbolIndividual()
 {
   cout << setw(LONGITUD_NODO) << left << "Codigo"
+       << setw(LONGITUD_HIJO) << left << "Identificacion"
        << setw(LONGITUD_NODO) << left << "Valor"
        << setw(LONGITUD_HIJO) << left << "Nodo Izquierdo"
        << setw(LONGITUD_HIJO) << left << "Valor Izquierdo"
@@ -287,6 +275,7 @@ void Arbol::mostrarDatosIndividual(Nodo *nodo)
   valor_derecha = (derecha) ? derecha->getValor() : 0;
 
   cout << setw(LONGITUD_NODO) << left << nodo
+       << setw(LONGITUD_HIJO) << left << nodo->obtenerIdentidad()
        << setw(LONGITUD_NODO) << left << nodo->getValor()
        << setw(LONGITUD_HIJO) << left << izquierda
        << setw(LONGITUD_HIJO) << left << valor_izquierda

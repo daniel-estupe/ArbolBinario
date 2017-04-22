@@ -30,9 +30,6 @@ private:
   void mostrarDatos(Nodo *);
   void mostrarDatosIndividual(Nodo *);
 
-  bool tieneHijos(Nodo *);
-  bool getDireccion(Nodo *);
-
   void elimina(Nodo *);
 
   Nodo *raiz;
