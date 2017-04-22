@@ -14,6 +14,7 @@ public:
   void mostrarPorWhile();
   void mostrarPorRecursion();
   void buscarNodo();
+  void eliminarNodo();
 
 private:
   void insertarRaiz( int );
@@ -31,6 +32,8 @@ private:
 
   bool tieneHijos(Nodo *);
   bool getDireccion(Nodo *);
+
+  void elimina(Nodo *);
 
   Nodo *raiz;
 };

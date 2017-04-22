@@ -110,6 +110,25 @@ void Arbol::buscarNodo()
   getch();
 }
 
+void Arbol::eliminarNodo()
+{
+  int valor;
+  Nodo *codigo_nodo = NULL;
+
+  cout << "Ingrese el valor del nodo: ";
+  cin >> valor;
+  codigo_nodo = getNodo(valor, raiz);
+  if(codigo_nodo)
+  {
+    elimina(codigo_nodo);
+    getch();
+  }
+  else
+  {
+    cout << endl << "El nodo no es parte del arbol..."; getch();
+  }
+}
+
 /* Métodos Privados */
 void Arbol::insertarRaiz(int valor)
 {
@@ -159,6 +178,44 @@ void Arbol::muestreoRecursivo(Nodo *nodo)
     muestreoRecursivo(nodo->getIzquierda());
   if(nodo->getDerecha())
     muestreoRecursivo(nodo->getDerecha());
+}
+
+void Arbol::elimina(Nodo *nodo)
+{
+  Nodo *codigo_padre = NULL;
+  bool direccion = false;
+
+  if(nodo != raiz)
+  {
+    if(nodo->getIzquierda() != NULL)
+      elimina(nodo->getIzquierda());
+    if(nodo->getDerecha() != NULL)
+      elimina(nodo->getDerecha());
+
+    codigo_padre = nodo->getPadre();
+
+    if(codigo_padre != NULL)
+    {
+      direccion = getDireccion(nodo);
+
+      if(direccion == true)
+      codigo_padre->setDerecha(NULL);
+      else
+        codigo_padre->setIzquierda(NULL);
+    }
+
+    nodo->setValor(0);
+    nodo->setDerecha(NULL);
+    nodo->setIzquierda(NULL);
+    nodo->setPadre(NULL);
+    delete nodo;
+
+    cout << endl << "Proceso exitoso...";
+  }
+  else
+  {
+    cout << endl << "No puedes eliminar la raiz...";
+  }
 }
 
 bool Arbol::tieneHijos(Nodo *nodo)

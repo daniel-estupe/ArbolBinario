@@ -5,11 +5,11 @@
 
 using namespace std;
 
-const char SALIR = '5'; /* de acuerdo al menu */
+const char SALIR = '6'; /* de acuerdo al menu */
 
 void estilizar()
 {
-  system("title Programacion III - Estructura de Nodos v2");
+  system("title Programacion III - Estructura de Nodos v3");
   system("color 3F");
 }
 
@@ -25,7 +25,8 @@ void mostrarMenu(){
       <<"2. Listar nodos usando while"<<endl
       <<"3. Listar nodos usando recursividad"<<endl
       <<"4. Buscar nodo"<<endl
-      <<"5. Salir"<<endl<<endl;
+      <<"5. Eliminar nodo"<<endl
+      <<"6. Salir"<<endl<<endl;
 }
 
 char obtenerItem()
@@ -55,6 +56,8 @@ void ejecutar(char op, Arbol *arbol)
     case '4':
       arbol->buscarNodo(); break;
     case '5':
+      arbol->eliminarNodo(); break;
+    case '6':
       salir(); break;
     default:
       cout << endl << "Opcion invalida..."; getch();
