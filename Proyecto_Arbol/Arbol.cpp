@@ -101,6 +101,7 @@ void Arbol::buscarNodo()
     {
       encabezadoArbolIndividual();
       mostrarDatosIndividual(codigo_nodo);
+      cout << endl << "Presione cualquier tecla para continuar...";
     }
     else
       cout << "Este nodo no es parte del arbol...";
@@ -112,21 +113,45 @@ void Arbol::buscarNodo()
 
 void Arbol::eliminarNodo()
 {
+  bool opcion_eliminar;
   int valor;
   Nodo *codigo_nodo = NULL;
 
   cout << "Ingrese el valor del nodo: ";
   cin >> valor;
+
   codigo_nodo = getNodo(valor, raiz);
-  if(codigo_nodo)
+
+  if(codigo_nodo != NULL)
   {
-    elimina(codigo_nodo);
-    getch();
+    if(codigo_nodo != raiz)
+    {
+      cout << endl;
+
+      encabezadoArbolIndividual();
+      mostrarDatosIndividual(codigo_nodo);
+
+      cout << endl << "Dese eliminar Si(1) No(0): ";
+      cin >> opcion_eliminar;
+
+      if(opcion_eliminar == true)
+      {
+        elimina(codigo_nodo);
+        cout << endl << "Proceso exitoso...";
+      }
+      else
+        cout << endl << "Presione cualquier tecla para continuar...";
+    }
+    else
+    {
+      cout << endl << "No puedes eliminar la raiz...";
+    }
   }
   else
   {
-    cout << endl << "El nodo no es parte del arbol..."; getch();
+    cout << endl << "El nodo no es parte del arbol...";
   }
+  getch();
 }
 
 /* Métodos Privados */
@@ -183,39 +208,28 @@ void Arbol::muestreoRecursivo(Nodo *nodo)
 void Arbol::elimina(Nodo *nodo)
 {
   Nodo *codigo_padre = NULL;
-  bool direccion = false;
+  bool direccion = false; /* true es derecha y false es izquierda */
 
-  if(nodo != raiz)
+  /* paso recursivo: post-orden */
+  if(nodo->getIzquierda() != NULL)
+    elimina(nodo->getIzquierda());
+  if(nodo->getDerecha() != NULL)
+    elimina(nodo->getDerecha());
+
+  codigo_padre = nodo->getPadre();
+
+  if(codigo_padre != NULL)
   {
-    if(nodo->getIzquierda() != NULL)
-      elimina(nodo->getIzquierda());
-    if(nodo->getDerecha() != NULL)
-      elimina(nodo->getDerecha());
+    direccion = getDireccion(nodo);
 
-    codigo_padre = nodo->getPadre();
-
-    if(codigo_padre != NULL)
-    {
-      direccion = getDireccion(nodo);
-
-      if(direccion == true)
+    if(direccion == true)
       codigo_padre->setDerecha(NULL);
-      else
-        codigo_padre->setIzquierda(NULL);
-    }
-
-    nodo->setValor(0);
-    nodo->setDerecha(NULL);
-    nodo->setIzquierda(NULL);
-    nodo->setPadre(NULL);
-    delete nodo;
-
-    cout << endl << "Proceso exitoso...";
+    else
+      codigo_padre->setIzquierda(NULL);
   }
-  else
-  {
-    cout << endl << "No puedes eliminar la raiz...";
-  }
+
+  delete nodo;
+
 }
 
 bool Arbol::tieneHijos(Nodo *nodo)
@@ -278,8 +292,6 @@ void Arbol::mostrarDatosIndividual(Nodo *nodo)
        << setw(LONGITUD_HIJO) << left << valor_izquierda
        << setw(LONGITUD_HIJO) << left << derecha
        << setw(LONGITUD_HIJO) << left << valor_derecha << endl;
-
-  cout << endl << "Presione cualquier tecla para continuar...";
 }
 
 
