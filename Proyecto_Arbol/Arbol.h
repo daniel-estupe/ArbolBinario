@@ -13,15 +13,26 @@ public:
   void agregarNodo();
   void mostrarPorWhile();
   void mostrarPorRecursion();
+  void buscarNodo();
 
 private:
-  void insertarValor( int );
+  void insertarRaiz( int );
+  void insertarHijo( int, Nodo *, bool );
+
+  Nodo *getNodo( int, Nodo * );
+
   void muestreoRecursivo(Nodo *);
+
   void encabezadoArbol();
+  void encabezadoArbolIndividual();
+
   void mostrarDatos(Nodo *);
+  void mostrarDatosIndividual(Nodo *);
+
+  bool tieneHijos(Nodo *);
+  bool getDireccion(Nodo *);
 
   Nodo *raiz;
-  Nodo *actual;
 };
 
 #endif // ARBOL_H
