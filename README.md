@@ -1,6 +1,7 @@
 
 # ArbolBinario
 Estructura de árbol binario escrito en el lenguaje C++.
+
 <pre>
 Integrantes: 
     Brenda Blanco 
@@ -14,9 +15,7 @@ Para ejecutar este proyecto en tu computadora debes abrir el
    archivo .cbp
 </pre>
 
-
-
-#VERSION 1. Nodos consecutivos.
+# VERSION 1. Nodos consecutivos.
 
 ## Caracteristica: como usuario necesito acceder al programa y que muestre un menu 
 Given (Dado)	Un usuario inicia el programa 
@@ -49,7 +48,7 @@ Then	el resultado se debe ser
 	Codigo nodo: 0002, Valor del nodo: 20, nodo siguiente: 003
 	Codigo nodo: 0003, Valor del nodo: 30, nodo siguiente: 000
 
-##Caracteristica: como usuario requiero salir del sistema
+## Caracteristica: como usuario requiero salir del sistema
 Escenario 1
 Given: Ingreso al menu
 When: Accedo a la opcion 4. Salir
