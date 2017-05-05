@@ -36,9 +36,9 @@ Escenario 1
 Ejemplo: 
 
     Codigo nodo    Valor del nodo    nodo siguiente
-        1000             10               2000  
-	2000             43               3000
-        3000             32                 0   
+    1000             10               2000  
+    2000             43               3000
+    3000             32                 0   
 
 
 Escenario 2	
@@ -49,10 +49,10 @@ Escenario 2
 
 Ejemplo:
 
-	Codigo nodo    Valor del nodo    nodo siguiente
-        1000             10               2000  
-	2000             43               3000
-        3000             32                 0 
+    Codigo nodo    Valor del nodo    nodo siguiente
+    1000             10               2000  
+    2000             43               3000
+    3000             32                 0
 
 
 ### Caracteristica: como usuario requiero salir del sistema	
