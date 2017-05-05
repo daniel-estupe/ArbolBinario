@@ -1,16 +1,16 @@
 # ArbolBinario
 Estructura de árbol binario escrito en el lenguaje C++.
 
-<strong>Integrantes:</strong> 
+Integrantes: 
     Brenda Blanco 
     Daniel Estupe 
     Eloina Carrillo
     Anahi Montiel
 
-<strong>Este proyecto fue compilado en el IDE CodeBlocks</strong>
+Este proyecto fue compilado en el IDE CodeBlocks
 
-<q>Para ejecutar este proyecto en tu computadora debes abrir el
-   archivo .cbp</q>
+Para ejecutar este proyecto en tu computadora debes abrir el
+   archivo .cbp
 
 
 #VERSION 1. Nodos consecutivos.
