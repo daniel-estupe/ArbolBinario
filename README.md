@@ -24,7 +24,7 @@ La primera version del programa incluye crear y mostrar nodos consecutivos.
 
 + **Given:** Ingreso al menu
 + **When:**	Accedo a la opcion 1. insertar un nodo
-+ **Then:**	Puedo escribir un valor de un nodo y crearlo
++ **Then:**	Puedo escribir un valor entero para el nodo y crearlo
 	
 ### Caracteristica: como usuario requiero una opcion listar los nodos que he ingresado	
 
