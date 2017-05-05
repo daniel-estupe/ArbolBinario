@@ -24,7 +24,7 @@ void mostrarMenu(){
   cout<<"1. Insertar un nodo"<<endl
       <<"2. Listar nodos usando while"<<endl
       <<"3. Listar nodos usando recursividad"<<endl
-      <<"4. Buscar nodo"<<endl
+      <<"4. Buscar un nodo por valor"<<endl
       <<"5. Eliminar nodo"<<endl
       <<"6. Salir"<<endl<<endl;
 }
