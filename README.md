@@ -201,18 +201,18 @@ Escenario 2 El nodo existe.
 # version 4 recorrido del arbol.
 ## Caracteristicas: como usuario requiero una opcion para recorrer el arbol en preorden.
 + **Given:** El usuario intresa a la opción 6.
-+ ** When:** El usuarion ingresa a la opcion 1 
-+ ** Then:** muestra el recorrido en preorden
++ **When:** El usuarion ingresa a la opcion 1 
++ **Then:** muestra el recorrido en preorden
 
 ## Caracteristicas: como usuario requiero una opcion para recorrer el arbol en postorden.
 + **Given:** El usuario intresa a la opción 6.
-+ ** When:** El usuarion ingresa a la opcion 2 
-+ ** Then:** muestra el recorrido en postorden
++ **When:** El usuarion ingresa a la opcion 2 
++ **Then:** muestra el recorrido en postorden
 
 ## Caracteristicas: como usuario requiero una opcion para recorrer el arbol en inorden.
 + **Given:** El usuario intresa a la opción 6.
-+ ** When:** El usuarion ingresa a la opcion 3 
-+ ** Then:** muestra el recorrido en inorden
++ **When:** El usuarion ingresa a la opcion 3 
++ **Then:** muestra el recorrido en inorden
 
 ## Autores
 
