@@ -5,7 +5,7 @@
 
 using namespace std;
 
-const char SALIR = '6'; /* de acuerdo al menu */
+const char SALIR = '7'; /* de acuerdo al menu */
 
 void estilizar()
 {
@@ -24,9 +24,10 @@ void mostrarMenu(){
   cout<<"1. Insertar un nodo"<<endl
       <<"2. Listar nodos usando while"<<endl
       <<"3. Listar nodos usando recursividad"<<endl
-      <<"4. Buscar un nodo por valor"<<endl
-      <<"5. Eliminar nodo"<<endl
-      <<"6. Salir"<<endl<<endl;
+      <<"4. Recorrer arbol"<<endl
+      <<"5. Buscar un nodo por valor"<<endl
+      <<"6. Eliminar nodo"<<endl
+      <<"7. Salir"<<endl<<endl;
 }
 
 char obtenerItem()
@@ -54,10 +55,12 @@ void ejecutar(char op, Arbol *arbol)
     case '3':
       arbol->mostrarPorRecursion(); break;
     case '4':
-      arbol->buscarNodo(); break;
+      arbol->recorrerArbol(); break;
     case '5':
-      arbol->eliminarNodo(); break;
+      arbol->buscarNodo(); break;
     case '6':
+      arbol->eliminarNodo(); break;
+    case '7':
       salir(); break;
     default:
       cout << endl << "Opcion invalida..."; getch();

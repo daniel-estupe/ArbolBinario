@@ -2,6 +2,7 @@
 #include <iostream>
 #include <conio.h>
 #include <iomanip>
+#include <stdlib.h>
 
 #ifndef ARBOL_H
 #define ARBOL_H
@@ -13,6 +14,7 @@ public:
   void agregarNodo();
   void mostrarPorWhile();
   void mostrarPorRecursion();
+  void recorrerArbol();
   void buscarNodo();
   void eliminarNodo();
 
@@ -23,6 +25,10 @@ private:
   Nodo *getNodo( int, Nodo * );
 
   void muestreoRecursivo(Nodo *);
+
+  void mostrarPreorden(Nodo *);
+  void mostrarEnorden(Nodo *);
+  void mostrarPostorden(Nodo *);
 
   void encabezadoArbol();
   void encabezadoArbolIndividual();

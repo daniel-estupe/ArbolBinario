@@ -88,6 +88,38 @@ void Arbol::mostrarPorRecursion()
   getch();
 }
 
+void Arbol::recorrerArbol()
+{
+  char opcion;
+
+  if(raiz != NULL)
+  {
+    cout<<"1.- Pre-orden"<<endl
+        <<"2.- En-orden"<<endl
+        <<"3.- Post-orden"<<endl<<endl
+        <<"Ingrese una opcion: ";
+    cin >> opcion;
+
+    encabezadoArbol();
+
+    switch(opcion)
+    {
+    case '1':
+      mostrarPreorden(raiz); break;
+    case '2':
+      mostrarEnorden(raiz); break;
+    case '3':
+      mostrarPostorden(raiz); break;
+    default:
+      cout<<endl<<"Ha ingresado una opcion invalida." << endl << endl;
+    }
+  }
+  else
+    cout << endl << "No hay datos en el arbol." << endl;
+
+  cout << endl << "Presione cualquier tecla para continuar..."; getch();
+}
+
 void Arbol::buscarNodo()
 {
   int valor;
@@ -209,6 +241,36 @@ void Arbol::muestreoRecursivo(Nodo *nodo)
     muestreoRecursivo(nodo->getDerecha());
 }
 
+void Arbol::mostrarPreorden(Nodo *nodo)
+{
+  if(nodo != NULL)
+    mostrarDatos(nodo);
+  if(nodo->getIzquierda() != NULL)
+    mostrarPreorden(nodo->getIzquierda());
+  if(nodo->getDerecha() != NULL)
+    mostrarPreorden(nodo->getDerecha());
+}
+
+void Arbol::mostrarEnorden(Nodo *nodo)
+{
+  if(nodo->getIzquierda() != NULL)
+    mostrarEnorden(nodo->getIzquierda());
+  if(nodo != NULL)
+    mostrarDatos(nodo);
+  if(nodo->getDerecha() != NULL)
+    mostrarEnorden(nodo->getDerecha());
+}
+
+void Arbol::mostrarPostorden(Nodo *nodo)
+{
+  if(nodo->getIzquierda() != NULL)
+    mostrarPostorden(nodo->getIzquierda());
+  if(nodo->getDerecha() != NULL)
+    mostrarPostorden(nodo->getDerecha());
+  if(nodo != NULL)
+    mostrarDatos(nodo);
+}
+
 void Arbol::elimina(Nodo *nodo)
 {
   Nodo *codigo_padre = NULL;
@@ -237,6 +299,9 @@ void Arbol::elimina(Nodo *nodo)
 
 void Arbol::encabezadoArbol()
 {
+  system("cls");
+  cout<< endl << "\t\t\t" << "Estructura de arboles"	<< endl << endl;
+
   cout << setw(LONGITUD_NODO) << left << "Codigo"
        << setw(LONGITUD_NODO) << left << "Valor"
        << setw(LONGITUD_HIJO) << left << "Nodo Izquierdo"
@@ -246,6 +311,9 @@ void Arbol::encabezadoArbol()
 
 void Arbol::encabezadoArbolIndividual()
 {
+  system("cls");
+  cout<< endl << "\t\t\t" << "Estructura de arboles"	<< endl << endl;
+
   cout << setw(LONGITUD_NODO) << left << "Codigo"
        << setw(LONGITUD_HIJO) << left << "Identificacion"
        << setw(LONGITUD_NODO) << left << "Valor"
