@@ -8,7 +8,7 @@ Estructura de árbol binario escrito en el lenguaje C++.
 
 La primera version del programa incluye crear y mostrar nodos consecutivos.
 
-### Caracteristica: como usuario necesito acceder al programa y que muestre un menu	
+### Caracteristica: acceso al programa y mostrar un menu	
 
 + **Given(Dado):** un usuario inicia el programa.
 + **When(Cuando):** carge el sistema
@@ -20,13 +20,27 @@ La primera version del programa incluye crear y mostrar nodos consecutivos.
 	  4. Salir
 
 
-### Caracteristica: como usuario requiero opcion para ingresar nodos consecutivos	
+### Caracteristica: ejecutar acciones de acuerdo la opcion del usuario y el menu
+
+Escenario 1	El usuario ingresa una opcion valida
+
++ **Given(Dado):** el usuario inicia el programa.
++ **When(Cuando):** el usuario ingresa la opcion
++ **Then(Entonces):** debe ejecutar la accion de acuerdo al menu
+
+Escenario 2	El usuario ingresa una opcion invalida
+
++ **Given(Dado):** el usuario inicia el programa.
++ **When(Cuando):** el usuario ingresa la opcion
++ **Then(Entonces):** el sistema muestra una notificacion y regresa al menu principal
+
+### Caracteristica: ingresar nodos consecutivos	
 
 + **Given:** Ingreso al menu
 + **When:**	Accedo a la opcion 1. insertar un nodo
 + **Then:**	Puedo escribir un valor entero para el nodo y crearlo al presionar enter
 	
-### Caracteristica: como usuario requiero una opcion listar los nodos que he ingresado	
+### Caracteristica: listar los nodos que se han ingresado	
 
 Escenario 1	
 + **Given:** Ingreso al menu
@@ -55,7 +69,14 @@ Ejemplo:
     3000             32                 0
 
 
-### Caracteristica: como usuario requiero salir del sistema	
+Escenario 3
+
++ **Given:** Ingreso al menu
++ **When:**	Accedo a la opcion 3. Lista nodos usando recursividad
++ **And:**   No hay datos en el sistema
++ **Then:**	Se muestra una notificacion de que no hay datos en el sistema 
+
+### Caracteristica: salir del sistema	
 
 Escenario 1	
 + **Given:** Ingreso al menu
@@ -64,9 +85,11 @@ Escenario 1
 
 
 
+
+
 ## VERSION 2. Agregar nodo izquierdo y derecho.
 
-### Caracteristica: como usuario requiero opcion para ingresar un nodo izquierdo y derecho	
+### Caracteristica: ingreso de nodo izquierdo y derecho	
 
 Escenario 1	No existe raiz en el arbol
 + **Given:**	Ingreso al menu
@@ -80,12 +103,12 @@ Escenario 2	Ya existe raiz en el arbol
 		Indica la direccion del nuevo nodo ->
 		Ingresa el valor del nuevo nodo.
 	
-	Escenario 2.1 	El valor del nodo padre existe y la dirección está disponible 	
+	Escenario 2.1 	El valor del nodo padre existe y la dirección indicada por el usuario está disponible 	
 	+ **Given:** El usuario ingresa el valor del nuevo nodo
 	+ **When:** Presiona enter
 	+ **Then:** El nodo es creado en la dirección antes especificada
 
-	Escenario 2.2 	El valor del nodo padre existe y la dirección no está disponible 	
+	Escenario 2.2 	El valor del nodo padre existe y la dirección indicada por el usuario no está disponible 	
 	+ **Given:** El usuario ingresa el valor del nuevo nodo
 	+ **When:** Presiona enter
 	+ **Then:** Se muestra un mensaje de alerta que ya esta ocupada esa direccion y regresa al menú principal 
@@ -144,14 +167,21 @@ Escenario 3
 
 ## Caracteristica: como usuario requiero buscar un nodo por valor
 
-+ **Given:** ingreso al menu
-+ **When:** entre a la opcion "4. Buscar un nodo por valor"
-+ **And** ingrese el valor a buscar
+Escenario 1
++ **Given:** El usuario ingresa la opcion 4
++ **When:** El usuario ingresa el valor del nodo
++ **And** el valor del nodo es encontrado
 + **Then:** debe de mostrar el resultado del ejemplo
 
 Ejemplo:
 
      Codigo nodo: 0001, Valor del nodo: 10, nodo izquierdo: 002, valor nodo izquierdo:20, nodo derecho: 003 y valor nodo derecho: 9
+
+Escenario 2
++ **Given:** El usuario ingresa la opcion 4
++ **When:** El usuario ingresa el valor del nodo
++ **And** el valor del nodo es encontrado
++ **Then:** muestra la opcion de que el nodo no fue encontrado
 
 
 
