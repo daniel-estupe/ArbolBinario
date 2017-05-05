@@ -198,6 +198,21 @@ Escenario 2 El nodo existe.
 + **When:** El usuario ingresa el valor del nodo
 + **And** el valor del nodo  es encontrado
 + **Then:** elimina el nodo del arbol.
+# version 4 recorrido del arbol.
+## Caracteristicas: como usuario requiero una opcion para recorrer el arbol en preorden.
++ **Given:** El usuario intresa a la opción 6.
++ ** When:** El usuarion ingresa a la opcion 1 
++ ** Then:** muestra el recorrido en preorden
+
+## Caracteristicas: como usuario requiero una opcion para recorrer el arbol en postorden.
++ **Given:** El usuario intresa a la opción 6.
++ ** When:** El usuarion ingresa a la opcion 2 
++ ** Then:** muestra el recorrido en postorden
+
+## Caracteristicas: como usuario requiero una opcion para recorrer el arbol en inorden.
++ **Given:** El usuario intresa a la opción 6.
++ ** When:** El usuarion ingresa a la opcion 3 
++ ** Then:** muestra el recorrido en inorden
 
 ## Autores
 
