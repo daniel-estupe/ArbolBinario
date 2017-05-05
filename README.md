@@ -18,14 +18,14 @@ Anahi Montiel <br/>
 
 #VERSION 1. Nodos consecutivos.
 
-## Caracteristica: como usuario necesito acceder al programa y que muestre un menu	
-Given (Dado)	Un usuario inicia el programa
-When(Cuando)	Carge el sistema
-Then (Entonces)	debe mostrar un el siguiente menu
-	1. Insertar un nodo
-	2. Listar nodos usando while
-	3. Listar nodos usando recursividad
-	4. Salir
+## Caracteristica: como usuario necesito acceder al programa y que muestre un menu <br/>
+Given (Dado)	Un usuario inicia el programa <br/>
+When(Cuando)	Carge el sistema <br/>
+Then (Entonces)	debe mostrar un el siguiente menu <br/>
+	1. Insertar un nodo <br/>
+	2. Listar nodos usando while <br/>
+	3. Listar nodos usando recursividad <br/>
+	4. Salir <br/>
 
 ## Caracteristica: como usuario requiero opcion para ingresar nodos consecutivos	
 Given:	Ingreso al menu
