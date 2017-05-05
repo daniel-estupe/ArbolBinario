@@ -4,7 +4,7 @@
 Estructura de árbol binario escrito en el lenguaje C++.
 
 
-## VERSION 1. 
+## VERSION 1. Nodos consecutivos
 
 La primera version del programa incluye crear y mostrar nodos consecutivos.
 
@@ -61,6 +61,31 @@ Escenario 1
 + **Given:** Ingreso al menu
 + **When:**	Accedo a la opcion 4. Salir
 + **Then:**	Muestra un mensaje de salida hasta que el usuario presione una tecla para salir
+
+
+
+## VERSION 2. Agregar nodo izquierdo y derecho.
+
+### Caracteristica: como usuario requiero opcion para ingresar un nodo izquierdo y derecho	
+
+Escenario 1	No existe raiz en el arbol
++ **Given:**	Ingreso al menu
++ **When:**	Accedo a la opcion 1. insertar un nodo
++ **Then:**	Puedo escribir el valor de la raiz del árbol
+	
+Escenario 2	Ya existe raiz en el arbol
++ **Given:**	Ingreso al menu
++ **When:**	Accedo a la opcion 1. insertar un nodo
++ **Then:**	Escribo el valor del nodo padre al que le ingresaré el nuevo nodo.
+		Indico la direccion del nuevo nodo.
+		Ingreso el valor del nuevo nodo.
+	
+	Escenario 2.1 		
+	+ **Given:** Ingreso al menu
+	+ **When:** Accedo a la opcion 1. insertar un nodo
+	+ **Then:** Puedo escribir el valor de nodo derecho y no escribir el valor del nodo izquierdo
+
+
 
 
 ## Autores
