@@ -2,16 +2,6 @@
 # ArbolBinario
 Estructura de árbol binario escrito en el lenguaje C++.
 
-Integrantes: 
-    Brenda Blanco 
-    Daniel Estupe 
-    Eloina Carrillo
-    Anahi Montiel
-
-Este proyecto fue compilado en el IDE CodeBlocks
-
-Para ejecutar este proyecto en tu computadora debes abrir el archivo .cbp
-
 
 # Project Title
 
@@ -100,3 +90,13 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 * Hat tip to anyone who's code was used
 * Inspiration
 * etc
+
+## Integrantes: 
+    Brenda Blanco 
+    Daniel Estupe 
+    Eloina Carrillo
+    Anahi Montiel
+
+* Este proyecto fue compilado en el IDE CodeBlocks
+
+* Para ejecutar este proyecto en tu computadora debes abrir el archivo .cbp
