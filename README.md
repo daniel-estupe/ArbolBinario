@@ -4,6 +4,8 @@
 Estructura de árbol binario escrito en el lenguaje C++.
 
 
+
+
 ## VERSION 1. Nodos consecutivos
 
 La primera version del programa incluye crear y mostrar nodos consecutivos.
@@ -82,6 +84,7 @@ Escenario 1
 + **Given:** Ingreso al menu
 + **When:**	Accedo a la opcion 4. Salir
 + **Then:**	Muestra un mensaje de salida hasta que el usuario presione una tecla para salir
+
 
 
 
@@ -191,7 +194,9 @@ Escenario 2
 
 
 
-# VERSION 3. Eliminar un nodo
+
+
+## VERSION 3. Eliminar un nodo
 
 ### Caracteristica: acceso al programa y mostrar un menu con las nuevas funciones del sistema	
 
@@ -211,11 +216,18 @@ Escenario 2
 
 ### Caracteristica: eliminar un nodo.
 
-Escenario 1
-+ **Given:** ingreso al menu
-+ **When:** selecciona la opcion eliminar nodo
-+ **And** ingreso el valor del nodo que requiero eliminar
-+ **Then:** se debe eliminar en nodo del arbol.
+Escenario 1	
++ **Given:** El usuario ingresa el valor a eliminar
++ **When:** El sistema termina la busqueda
++ **And** Ha encontrado el nodo segun el valor
++ **Then:** Elimina el nodo  y sus hijos del arbol.
+
+Escenario 2
++ **Given:** El usuario ingresa el valor a eliminar
++ **When:** El sistema termina la busqueda
++ **And** No ha encontrado el nodo segun el valor
++ **Then:** Muestra un notificacion de que el nodo no ha sido encontrado 
+
 
 
 ## VERSION 4. Recorridos de un arbol.
