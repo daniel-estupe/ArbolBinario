@@ -77,4 +77,4 @@ Escenario 1
 
 ### Nota
 
-Para ejecutar este proyecto en tu computadora debes abrir el archivo .cbp
+Para ejecutar este proyecto en tu computadora debes abrir el archivo .cbp y con el IDE CodeBlocks.
