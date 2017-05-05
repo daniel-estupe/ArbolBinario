@@ -1,80 +1,80 @@
 
-# ArbolBinario
+# Proyecto Arbol Binario
+
 Estructura de árbol binario escrito en el lenguaje C++.
 
 
-# Project Title
+## VERSION 1. 
 
-One Paragraph of project description goes here
+La primera version del programa incluye crear y mostrar nodos consecutivos.
 
-## Getting Started
+### Caracteristica: como usuario necesito acceder al programa y que muestre un menu	
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
++ **Given(Dado):** un usuario inicia el programa.
++ **When(Cuando):** carge el sistema
++ **Then(Entonces):** debe mostrar un el siguiente menu
 
-### Prerequisites
+	  1. Insertar un nodo
+	  2. Listar nodos usando while
+	  3. Listar nodos usando recursividad
+	  4. Salir
 
-What things you need to install the software and how to install them
 
-```
-Give examples
-```
+### Caracteristica: como usuario requiero opcion para ingresar nodos consecutivos	
 
-### Installing
++ **Given:** Ingreso al menu
++ **When:**	Accedo a la opcion 1. insertar un nodo
++ **Then:**	Puedo escribir un valor de un nodo y crearlo
+	
+### Caracteristica: como usuario requiero una opcion listar los nodos que he ingresado	
 
-A step by step series of examples that tell you have to get a development env running
+Escenario 1	
++ **Given:** Ingreso al menu
++ **When:**	Accedo a la opcion 2. Lista nodos usando while
++ **Then:**	el resultado se debe ser:
 
-Say what the step will be
+Ejemplo: 
 
-```
-Give the example
-```
+    Codigo nodo    Valor del nodo    nodo siguiente
+        1000             10               2000  
+	      2000             43               3000
+        3000             32                 0   
 
-And repeat
 
-```
-until finished
-```
+Escenario 2	
 
-End with an example of getting some data out of the system or using it for a little demo
++ **Given:** Ingreso al menu
++ **When:**	Accedo a la opcion 3. Lista nodos usando recursividad
++ **Then:**	El resultado se debe ser 
 
-## Running the tests
+Ejemplo:
 
-Explain how to run the automated tests for this system
+	Codigo nodo    Valor del nodo    nodo siguiente
+        1000             10               2000  
+	      2000             43               3000
+        3000             32                 0 
 
-### Break down into end to end tests
 
-Explain what these tests test and why
+### Caracteristica: como usuario requiero salir del sistema	
 
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
+Escenario 1	
++ **Given:** Ingreso al menu
++ **When:**	Accedo a la opcion 4. Salir
++ **Then:**	Muestra un mensaje de salida hasta que el usuario presione una tecla para salir
 
 
 ## Autores
 
 * **Daniel Estupe** - [DanielEstupe](https://github.com/DanielEstupe)
 * **Brenda Blanco** - [bdeleonb](https://github.com/bdeleonb)
-* **Eloina Carrillo** - [FranciscaC](https://github.com/FranciscaC]
-* **Anahi Montiel** - [AnahiMontiel](https://github.com/AnahiMontiel]
+* **Eloina Carrillo** - [FranciscaC](https://github.com/FranciscaC)
+* **Anahi Montiel** - [AnahiMontiel](https://github.com/AnahiMontiel)
 
 
 ## IDE
 
 * [CodeBlocks](http://www.codeblocks.org/) - El IDE en el que fue compilado el proyecto
 
-
-## Notas
+### Nota
 
 Para ejecutar este proyecto en tu computadora debes abrir el archivo .cbp
