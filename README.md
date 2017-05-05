@@ -37,7 +37,7 @@ Ejemplo:
 
     Codigo nodo    Valor del nodo    nodo siguiente
         1000             10               2000  
-	2000             43               3000
+	 2000             43               3000
         3000             32                 0   
 
 
@@ -51,7 +51,7 @@ Ejemplo:
 
 	Codigo nodo    Valor del nodo    nodo siguiente
         1000             10               2000  
-	2000             43               3000
+	 2000             43               3000
         3000             32                 0 
 
 
