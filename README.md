@@ -12,7 +12,7 @@ La primera version del programa incluye crear y mostrar nodos consecutivos.
 
 + **Given(Dado):** un usuario inicia el programa.
 + **When(Cuando):** carge el sistema
-+ **Then(Entonces):** debe mostrar un el siguiente menu
++ **Then(Entonces):** debe mostrar el siguiente menu
 
 	  1. Insertar un nodo
 	  2. Listar nodos usando while
