@@ -16,9 +16,9 @@ class Nodo {
      this->izquierda = NULL;
     }
 
-    void setPadre(Nodo *padre)
+    void setPadre(Nodo *nodo)
     {
-      this->padre = padre;
+      this->padre = nodo;
     }
 
     void setDerecha(Nodo *derecha)
