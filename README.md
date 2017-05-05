@@ -92,10 +92,10 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 * etc
 
 ## Integrantes: 
-    Brenda Blanco 
-    Daniel Estupe 
-    Eloina Carrillo
-    Anahi Montiel
+  Brenda Blanco 
+  Daniel Estupe 
+  Eloina Carrillo
+  Anahi Montiel
 
 * Este proyecto fue compilado en el IDE CodeBlocks
 
