@@ -76,14 +76,82 @@ Escenario 1	No existe raiz en el arbol
 Escenario 2	Ya existe raiz en el arbol
 + **Given:**	Ingreso al menu
 + **When:**	Accedo a la opcion 1. insertar un nodo
-+ **Then:**	Escribo el valor del nodo padre al que le ingresaré el nuevo nodo.
-		Indico la direccion del nuevo nodo.
-		Ingreso el valor del nuevo nodo.
++ **Then:**	El usuario ingresa el valor del nodo padre al que le quiere dar el nuevo nodo ->
+		Indica la direccion del nuevo nodo ->
+		Ingresa el valor del nuevo nodo.
 	
-	Escenario 2.1 		
-	+ **Given:** Ingreso al menu
-	+ **When:** Accedo a la opcion 1. insertar un nodo
-	+ **Then:** Puedo escribir el valor de nodo derecho y no escribir el valor del nodo izquierdo
+	Escenario 2.1 	El valor del nodo padre existe y la dirección está disponible 	
+	+ **Given:** El usuario ingresa el valor del nuevo nodo
+	+ **When:** Presiona enter
+	+ **Then:** El nodo es creado en la dirección antes especificada
+
+	Escenario 2.2 	El valor del nodo padre existe y la dirección no está disponible 	
+	+ **Given:** El usuario ingresa el valor del nuevo nodo
+	+ **When:** Presiona enter
+	+ **Then:** Se muestra un mensaje de alerta que ya esta ocupada esa direccion y regresa al menú principal 
+	
+	Escenario 2.3 	El valor del nodo padre no existe 
+	+ **Given:** El sistema busca la dirección del nodo padre según el valor ingresado
+	+ **When:** Termina de buscar y la dirección no es encontrada
+	+ **Then:** El sistema muestra la notificación de que el nodo padre no existe y regresa al menú principal
+
+
+
+### Caracteristica: como usuario requiero una opcion para listar los nodos que he ingresado	
+
+Escenario 1	
++ **Given:** ingreso al menu
++ **When:** accedo a la opcion 2. Lista nodos usando while
++ **Then:** el resultado se debe ser como el ejemplo
+
+Ejemplo:
+
+	Codigo nodo    Valor del nodo    Nodo Izquierdo		Nodo Derecho
+    	1000             10               2000  		3000
+    	2000             43               0			0
+    	3000             32               0			0
+
+Escenario 2	
++ **Given:** ingreso al menu
++ **When:** accedo a la opcion 3. Lista nodos usando recursividad
++ **Then:**	el resultado se debe ser como el ejemplo
+	
+Ejemplo:
+
+    Codigo nodo    Valor del nodo    Nodo Izquierdo	Nodo Derecho
+    1000             10               2000  		3000
+    2000             43               0			0
+    3000             32               0			0
+  
+Escenario 3
++ **Given:** ingreso al menu
++ **When:** accedo a la opcion 2 o 3 y no hay datos en el arbol
++ **Then:** Muestra la notificacion que no hay datos existentes en el arbol y regresa al menu principal
+
+
+### Caracteristica: como usuario requiero una opcion para buscar un nodo
+
++ **Given:** ingreso al menu
++ **When:** carge el sistema
++ **Then:** debe de aparecer una opcion con nombre "4. Buscar un nodo por valor"
+
+### Caracteristica: como usuario requiero cambiar reemplazar el titulo de la opcion salir
+
++ **Given:** ingreso al menu
++ **When:** carge el sistema
++ **Then:** cambiar la opcion "4. Salir" a "5. Salir"
+
+
+## Caracteristica: como usuario requiero buscar un nodo por valor
+
++ **Given:** ingreso al menu
++ **When:** entre a la opcion "4. Buscar un nodo por valor"
++ **And** ingrese el valor a buscar
++ **Then:** debe de mostrar el resultado del ejemplo
+
+Ejemplo:
+
+     Codigo nodo: 0001, Valor del nodo: 10, nodo izquierdo: 002, valor nodo izquierdo:20, nodo derecho: 003 y valor nodo derecho: 9
 
 
 
