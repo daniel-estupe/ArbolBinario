@@ -133,12 +133,17 @@ Escenario 2	Ya existe raiz en el arbol
 	+ **When:** Presiona enter
 	+ **Then:** Se muestra un mensaje de alerta que ya esta ocupada esa direccion y regresa al menú principal 
 	
-	Escenario 2.3 	El valor del nodo no existe 
+	Escenario 2.3 	El valor del nodo ya existe 
+	+ **Given:** El sistema busca la dirección del nodo según el valor ingresado
+	+ **When:** Termina de buscar y la dirección es encontrada
+	+ **Then:** El sistema muestra la notificación de que ya existe un nodo con ese valor y regresa al menú principal
+	
+	Escenario 2.4 	El valor del nodo no existe 
 	+ **Given:** El sistema busca la dirección del nodo según el valor ingresado
 	+ **When:** Termina de buscar y la dirección no es encontrada
 	+ **Then:** El sistema muestra la notificación de que el nodo no existe y regresa al menú principal
 
-
+	
 
 ### Caracteristica: opcion para listar los nodos que he ingresado	
 
