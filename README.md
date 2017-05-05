@@ -89,12 +89,29 @@ Escenario 1
 
 ## VERSION 2. Agregar nodo izquierdo y derecho.
 
+
+### Caracteristica: acceso al programa y mostrar un menu con las nuevas funciones del sistema	
+
++ **Given(Dado):** un usuario inicia el programa.
++ **When(Cuando):** carge el sistema
++ **Then(Entonces):** debe mostrar el siguiente menu
+
+	  1. Insertar un nodo
+	  2. Listar nodos usando while
+	  3. Listar nodos usando recursividad
+	  4. Buscar un nodo por valor
+	  5. Salir
+
+
+### Caracteristica: ejecutar acciones de acuerdo la opcion del usuario y el menu
+
+
 ### Caracteristica: ingreso de nodo izquierdo y derecho	
 
 Escenario 1	No existe raiz en el arbol
 + **Given:**	Ingreso al menu
 + **When:**	Accedo a la opcion 1. insertar un nodo
-+ **Then:**	Puedo escribir el valor de la raiz del árbol
++ **Then:**	El usuario ingresa el valor de la raiz del árbol
 	
 Escenario 2	Ya existe raiz en el arbol
 + **Given:**	Ingreso al menu
@@ -103,24 +120,24 @@ Escenario 2	Ya existe raiz en el arbol
 		Indica la direccion del nuevo nodo ->
 		Ingresa el valor del nuevo nodo.
 	
-	Escenario 2.1 	El valor del nodo padre existe y la dirección indicada por el usuario está disponible 	
+	Escenario 2.1 	El valor del nodo existe y la dirección indicada por el usuario está disponible 	
 	+ **Given:** El usuario ingresa el valor del nuevo nodo
 	+ **When:** Presiona enter
 	+ **Then:** El nodo es creado en la dirección antes especificada
 
-	Escenario 2.2 	El valor del nodo padre existe y la dirección indicada por el usuario no está disponible 	
+	Escenario 2.2 	El valor del nodo existe y la dirección indicada por el usuario no está disponible 	
 	+ **Given:** El usuario ingresa el valor del nuevo nodo
 	+ **When:** Presiona enter
 	+ **Then:** Se muestra un mensaje de alerta que ya esta ocupada esa direccion y regresa al menú principal 
 	
-	Escenario 2.3 	El valor del nodo padre no existe 
-	+ **Given:** El sistema busca la dirección del nodo padre según el valor ingresado
+	Escenario 2.3 	El valor del nodo no existe 
+	+ **Given:** El sistema busca la dirección del nodo según el valor ingresado
 	+ **When:** Termina de buscar y la dirección no es encontrada
-	+ **Then:** El sistema muestra la notificación de que el nodo padre no existe y regresa al menú principal
+	+ **Then:** El sistema muestra la notificación de que el nodo no existe y regresa al menú principal
 
 
 
-### Caracteristica: como usuario requiero una opcion para listar los nodos que he ingresado	
+### Caracteristica: opcion para listar los nodos que he ingresado	
 
 Escenario 1	
 + **Given:** ingreso al menu
@@ -148,24 +165,12 @@ Ejemplo:
   
 Escenario 3
 + **Given:** ingreso al menu
-+ **When:** accedo a la opcion 2 o 3 y no hay datos en el arbol
++ **When:** accedo a la opcion 2 o 3
++ **And:** No hay datos en el arbol
 + **Then:** Muestra la notificacion que no hay datos existentes en el arbol y regresa al menu principal
 
 
-### Caracteristica: como usuario requiero una opcion para buscar un nodo
-
-+ **Given:** ingreso al menu
-+ **When:** carge el sistema
-+ **Then:** debe de aparecer una opcion con nombre "4. Buscar un nodo por valor"
-
-### Caracteristica: como usuario requiero cambiar reemplazar el titulo de la opcion salir
-
-+ **Given:** ingreso al menu
-+ **When:** carge el sistema
-+ **Then:** cambiar la opcion "4. Salir" a "5. Salir"
-
-
-## Caracteristica: como usuario requiero buscar un nodo por valor
+### Caracteristica: buscar un nodo por valor
 
 Escenario 1
 + **Given:** El usuario ingresa la opcion 4
@@ -175,44 +180,82 @@ Escenario 1
 
 Ejemplo:
 
-     Codigo nodo: 0001, Valor del nodo: 10, nodo izquierdo: 002, valor nodo izquierdo:20, nodo derecho: 003 y valor nodo derecho: 9
+     Codigo 	Valor	 Nodo Izquierdo	   Valor Izquierdo	Nodo Derecho	  Valor Derecho
+     0xbc0d38 	10	 0xbc0d50	   40			0xbc0d83	   82
 
 Escenario 2
 + **Given:** El usuario ingresa la opcion 4
 + **When:** El usuario ingresa el valor del nodo
-+ **And** el valor del nodo es encontrado
++ **And** el valor del nodo no fue encontrado
 + **Then:** muestra la opcion de que el nodo no fue encontrado
 
-# Version 3 Identificar a un nodo y descubrir sus caracteristicas.
-## Caracteristica: como usuario requiero eliminar un nodo por valor.
 
-Escenario 1 No existe el nodo.
-+ **Given:** El usuario ingresa la opcion 5
-+ **When:** El usuario ingresa el valor del nodo
-+ **And** el valor del nodo no es encontrado
-+ **Then:** muestra la opcion de que el nodo no fue encontrado
 
-Escenario 2 El nodo existe.
+# VERSION 3. Eliminar un nodo
 
-+ **Given:** El usuario ingresa la opcion 5
-+ **When:** El usuario ingresa el valor del nodo
-+ **And** el valor del nodo  es encontrado
-+ **Then:** elimina el nodo del arbol.
-# version 4 recorrido del arbol.
-## Caracteristicas: como usuario requiero una opcion para recorrer el arbol en preorden.
-+ **Given:** El usuario intresa a la opción 6.
-+ **When:** El usuarion ingresa a la opcion 1 
-+ **Then:** muestra el recorrido en preorden
+### Caracteristica: acceso al programa y mostrar un menu con las nuevas funciones del sistema	
 
-## Caracteristicas: como usuario requiero una opcion para recorrer el arbol en postorden.
-+ **Given:** El usuario intresa a la opción 6.
-+ **When:** El usuarion ingresa a la opcion 2 
-+ **Then:** muestra el recorrido en postorden
++ **Given(Dado):** un usuario inicia el programa.
++ **When(Cuando):** carge el sistema
++ **Then(Entonces):** debe mostrar el siguiente menu
 
-## Caracteristicas: como usuario requiero una opcion para recorrer el arbol en inorden.
-+ **Given:** El usuario intresa a la opción 6.
-+ **When:** El usuarion ingresa a la opcion 3 
-+ **Then:** muestra el recorrido en inorden
+	  1. Insertar un nodo
+	  2. Listar nodos usando while
+	  3. Listar nodos usando recursividad
+	  4. Buscar un nodo por valor
+	  5. Eliminar nodo
+	  6. Salir
+
+
+### Caracteristica: ejecutar acciones de acuerdo la opcion del usuario y el menu
+
+### Caracteristica: eliminar un nodo.
+
+Escenario 1
++ **Given:** ingreso al menu
++ **When:** selecciona la opcion eliminar nodo
++ **And** ingreso el valor del nodo que requiero eliminar
++ **Then:** se debe eliminar en nodo del arbol.
+
+
+## VERSION 4. Recorridos de un arbol.
+
+### Caracteristica: acceso al programa y mostrar un menu con las nuevas funciones del sistema	
+
++ **Given(Dado):** un usuario inicia el programa.
++ **When(Cuando):** carge el sistema
++ **Then(Entonces):** debe mostrar el siguiente menu
+
+	  1. Insertar un nodo
+	  2. Listar nodos usando while
+	  3. Listar nodos usando recursividad
+	  4. Recorrer arbol
+	  5. Buscar un nodo por valor
+	  6. Eliminar nodo
+	  7. Salir
+
+
+### Caracteristica: ejecutar acciones de acuerdo la opcion del usuario y el menu
+
+### Caracteristica: reccorrer el arbol en preorden
+
++ **Given:** ingreso al menu
++ **When:** selecciona la opcion recorrer arbol en preorden
++ **Then:** muestra el resultado del recorrido en preorden
+
+### Caracteristica: reccorrer el arbol en preorden
+
++ **Given:** ingreso al menu
++ **When:** selecciona la opcion recorrer arbol en postorden
++ **Then:** muestra el resultado del recorrido en postorden
+
+### Caracteristica: reccorrer el arbol en inorden
+
++ **Given:** ingreso al menu
++ **When:** selecciona la opcion recorrer arbol en inorden
++ **Then:** muestra el resultado del recorrido en inorden
+
+
 
 ## Autores
 
