@@ -1,3 +1,4 @@
+<code>
 # ArbolBinario
 Estructura de árbol binario escrito en el lenguaje C++.
 
@@ -52,3 +53,5 @@ Given: Ingreso al menu
 When: Accedo a la opcion 4. Salir
 Then: Mostrará un mensaje de despedida. 
       Esperará el ingreso de cualquier tecla de parte del usuario para salir.
+
+</code>
