@@ -24,7 +24,7 @@ La primera version del programa incluye crear y mostrar nodos consecutivos.
 
 + **Given:** Ingreso al menu
 + **When:**	Accedo a la opcion 1. insertar un nodo
-+ **Then:**	Puedo escribir un valor entero para el nodo y crearlo
++ **Then:**	Puedo escribir un valor entero para el nodo y crearlo al presionar enter
 	
 ### Caracteristica: como usuario requiero una opcion listar los nodos que he ingresado	
 
@@ -37,7 +37,7 @@ Ejemplo:
 
     Codigo nodo    Valor del nodo    nodo siguiente
         1000             10               2000  
-	      2000             43               3000
+	2000             43               3000
         3000             32                 0   
 
 
@@ -51,7 +51,7 @@ Ejemplo:
 
 	Codigo nodo    Valor del nodo    nodo siguiente
         1000             10               2000  
-	      2000             43               3000
+	2000             43               3000
         3000             32                 0 
 
 
